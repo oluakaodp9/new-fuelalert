@@ -35,8 +35,7 @@ if($stmt){
     // fetch() is faster than fetchAll()
     // $rowa = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // echo json_encode($rowa);
-
+   
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         // extract row
         // this will make $row['name'] to
@@ -48,7 +47,7 @@ if($stmt){
             "name" => $name,
             "address" => $address,
             "area" => $area,
-            "state" => $state,
+            "state" => $state
         );
   
         array_push($fuel_prices_arr["records"], $fuel_price_item);

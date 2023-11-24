@@ -56,7 +56,7 @@ class FuelPriceReport
         // return $stmt;
 
         // select all query
-        $query = "SELECT fuel_price_reports.fuel_price, filling_stations.name, filling_stations.address, filling_stations.area, filling_stations.state FROM filling_stations Left JOIN fuel_price_reports ON fuel_price_reports.station_id=filling_stations.id";
+        $query = "SELECT fuel_price_reports.fuel_price, filling_stations.name, filling_stations.address, filling_stations.area, filling_stations.state FROM filling_stations Left JOIN fuel_price_reports ON fuel_price_reports.station_id=filling_stations.id ORDER BY fuel_price";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);
