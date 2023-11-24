@@ -11,9 +11,9 @@ header("Access-Control-Allow-Headers:".$ALLOWED_HEADERS);
 $fuel_price = new FuelPriceReport($db);
   
 // read fuel_price id will be here
-$fuel_price_id = $_GET['fuel_price_id'] ?? null;
+$fp_id = $_GET['fuel_price_id'] ?? null;
 
-if($fuel_price_id == null || !is_numeric($fuel_price_id)){
+if($fp_id == null || !is_numeric($fp_id)){
     // No valid fuel_price id provided
   
     // set response code - 404 Not found
@@ -28,7 +28,7 @@ if($fuel_price_id == null || !is_numeric($fuel_price_id)){
 }
 
 // query fuel_prices
-$fuel_price->id = $fuel_price_id;
+$fuel_price->id = $fp_id;
 $stmt = $fuel_price->get_fuel_price_report();
 // $num = $stmt->rowCount();
   
@@ -38,7 +38,15 @@ if($stmt){
     // fuel_prices array
     $fuel_prices_arr=array();
     $fuel_prices_arr["records"]=array();
-  
+
+        // "id" => $id,
+    // "user_id" => $user_id,
+    // "station_id" => $station_id,
+    // "fuel_price" => $fuel_price,
+    // "verified" => $verified,
+    // "created_at" => $created_at,
+    // "updated_at" => $updated_at
+    
     // retrieve our table contents
     // fetch() is faster than fetchAll()
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -48,13 +56,11 @@ if($stmt){
         extract($row);
   
         $fuel_price_item=array(
-            "id" => $id,
-            "user_id" => $user_id,
-            "station_id" => $station_id,
             "fuel_price" => $fuel_price,
-            "verified" => $verified,
-            "created_at" => $created_at,
-            "updated_at" => $updated_at
+            "name" => $name,
+            "address" => $address,
+            "area" => $area,
+            "state" => $state
         );
   
         array_push($fuel_prices_arr["records"], $fuel_price_item);
