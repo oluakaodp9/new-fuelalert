@@ -41,6 +41,7 @@ button{
   margin: 10px;
 
 }
+
 .inputs{
   display: flex;
   flex-direction: column;
@@ -73,4 +74,9 @@ header img {
 footer{
   padding: 20px;
   background-color: var(--secondary-color);
+}
+a{
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
 }

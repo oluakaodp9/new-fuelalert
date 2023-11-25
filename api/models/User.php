@@ -235,7 +235,7 @@ class User
 
             $resetUser = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // if ($resetUser) {
+            if ($resetUser) {
 
                 $this->firstname = $resetUser['firstname'];
 
@@ -251,6 +251,8 @@ class User
                 $update_stmt->bindParam(':user_code', $this->user_code);
 
                 if ($update_stmt->execute()) {
+
+                    return "user_code changed succesfully";
 
                     // Send new password link
                     $to = $this->email;
@@ -273,15 +275,18 @@ class User
                     $mailSent = mail($to, $subject, $message, $header);
 
                     // return $mailSent;
-                    if ($mailSent) return "Your password reset code has been sewnt to your mail.";
-                    return "Failed to reset password due to issues with your mail server. Please check your mail server and try again";
+                    if ($mailSent) {
+                        return "Your password reset code has been sent to your mail.";
+                    } else {
+                        return "Failed to reset password due to issues with your mail server. Please check your mail server and try again";
+                    }
                 } else {
                     return "User code updated failed. Try again";
                 }
-            // } else {
+            } else {
 
-            //     return "This user email is invalid";
-            // }
+                return "This user email is invalid";
+            }
         } else {
 
             return "This Email is invalid";
