@@ -33,6 +33,16 @@ header img {
 }
 
 
+#btnrepo{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+.atag{
+  font-weight: 900;
+  font-size: 1.2rem;
+}
 
 a {
   display: flex;
@@ -73,4 +83,14 @@ footer p{
   padding: 10px;
   color: var(--accent-color);
   text-align: center;
+}
+
+.btnback{
+  background-color: #007bff;
+  color: white;
+  padding: 5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
 }

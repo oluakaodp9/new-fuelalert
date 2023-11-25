@@ -5,7 +5,7 @@ reportFuelPriceForm.addEventListener('submit', (event) => {
 
   const stationName = document.getElementById('stationName').value;
   const stationArea = document.getElementById('stationArea').value;
-  const stationPrice = document.getElementById('stationPrice')
+  const stationPrice = document.getElementById('stationPrice').value;
   const stationState = document.getElementById('stationState').value;
   const stationCountry = document.getElementById('stationCountry').value;
 
@@ -21,6 +21,7 @@ reportFuelPriceForm.addEventListener('submit', (event) => {
   // Send API request using fetch 
   fetch('https://FuelAlert.myf2.net/api/fuel_price_apis/create_fuel_price.php ', {
     method: 'POST',
+    mode: 'no-cors',
     headers: {
       'Content-Type': 'application/json'
     },

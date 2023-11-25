@@ -52,6 +52,25 @@ header img {
   height: 90px;
 }
 
+.btnback{
+  background-color: #007bff;
+  color: white;
+  padding: 15px 32px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+
+}
+.btnback:hover{
+  background-color: #0056b3;
+
+}
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
 .inputs button{
   background-color: #007bff;
   color: white;
