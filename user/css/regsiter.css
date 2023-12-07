@@ -25,6 +25,7 @@ body {
     background: url(../images/fuelbg2.jpg) no-repeat center center/cover;
     opacity: 0.9;
 }
+
 /*------------ For the Register Page -----------------*/
 .FormBack {
     color: var(--dark-Main);
@@ -53,6 +54,7 @@ body {
     color: var(--dark-Main);
     font-family: "Jost", sans-serif;
 }
+
 .emailHolder,
 .passwordHolder {
     margin: 17px 0;
@@ -72,11 +74,14 @@ body {
     color: var(--dark-Main);
     font-family: "Jost", sans-serif;
 }
-#userPassword{
+
+
+#userPassword {
     font-size: 20px;
 }
 
-#userEmail:hover, #userName:hover,
+#userEmail:hover,
+#userName:hover,
 #userPassword:hover {
     border: 2px solid var(--primary-White);
     cursor: pointer;
@@ -106,7 +111,9 @@ body {
     font-weight: bold;
     font-family: "Jost", sans-serif;
     border-radius: 10px;
-     color: var(--dark-Main);
+
+    color: var(--dark-Main);
+
 }
 
 .submitBtn:hover {
@@ -116,12 +123,16 @@ body {
     transition: all 0.3s ease;
     transform: translateY(10px);
 }
-.submitBtn i{
+
+
+.submitBtn i {
+
     font-size: 1.5rem;
     position: relative;
     left: 10px;
     top: 3px;
 }
+
 .remember,
 .showPassword {
     margin: 0 18px;
@@ -138,10 +149,14 @@ body {
     font-family: "Jost", sans-serif;
     border-radius: 10px;
 }
-.registerUser a{
+
+
+.registerUser a {
     color: var(--dark-Main);
     text-decoration: none;
 }
+
+
 .registerUser:hover {
     background: transparent;
     border: 3px solid var(--primary-White);
@@ -149,8 +164,11 @@ body {
     transition: all 0.3s ease;
     transform: translateY(-10px);
 }
-.registerUser a:hover{
-        color: var(--dark-Main);
+
+
+.registerUser a:hover {
+    color: var(--dark-Main);
+
 }
 
 .forgotPassword {
