@@ -1,3 +1,12 @@
+:root{
+  --primary-color: #04364a;
+  --secondary-color: #176b87;
+  --off-color: #64ccc5;
+  --accent-color: #dafffb;
+}
+
+
+
 body {
   margin: 0;
   padding: 0;
@@ -8,10 +17,11 @@ body {
 
 header {
   display: flex;
-  justify-content: l;
+  justify-content: space-between;
   align-items: center;
   height: 60px;
-  background-color:  var(--accent-color);
+
+  background-color:  var(--primary-color);
 }
 header img {
   height: 90px;
@@ -23,10 +33,30 @@ main {
 
 aside {
   width: 200px;
+  height: 100%;
   background-color:var(--off-color);
   padding: 20px;
 }
 
+nav ul li{
+  display: inline-block;
+  margin: 0 10px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+nav ul li a:hover{
+  color: var(--off-color);
+}
+.card-nav{
+  color: var(--off-color);
+  text-decoration: none;
+}
+.card:hover{
+  background-color: var(--accent-color);
+  color: #000;
+}
 aside ul {
   list-style: none;
   padding: 0;
@@ -63,7 +93,7 @@ section {
 .card {
   width: 200px;
   height: 100px;
-  background-color: #fff;
+  background-color: var(--primary-color);
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;

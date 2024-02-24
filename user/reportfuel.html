@@ -1,33 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="reportfuel.css">
-</head>
-<body>
-  <header>
-    <a href="index.html"><img src="assets/logo.png" alt="User Dashboard Logo"></a>
-   </header>
-<button><a href="userviewprice.html">Back</a></button>
-  <form id="reportFuelPrice-form">
-    <h1>Report Fuel Price</h1>
-  <input type="number" placeholder="User Id">
-  <input type="text" placeholder="Filling Station Name" required id="stationName">
-  <input type="number" placeholder="Fuel Price" required id="stationPrice">
-   <input type="text" placeholder="Area" required  id="stationArea">
-   <input type="text" placeholder="State" required  id="stationState">
-   <input type="text" placeholder="Country" required  id="stationCountry">
-   <button type="submit">Report</button>
-  </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="reportfuel.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
+  </head>
+  <body>
+    <header>
+      <a href="index.html"
+        ><img src="assets/logo.png" alt="User Dashboard Logo"
+      /></a>
+    </header>
+    <a href="userviewprice.html" id="back"><i class="uil uil-arrow-left"></i></a>
 
-  <footer>
-    <p>&copy; Fuel Alert 2023</p>
-  </footer>
+      <form id="survey-form">
+        <h1>Report Fuel Price</h1>
+        <div class="form-group">
+          <label id="user-id" for="user-id">User ID</label>
+          <input
+            type="text"
+            name="user-id"
+            id="user-id"
+            class="form-control"
+          disabled
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="station-name" for="name">Station Name</label>
+          <input
+            type="text"
+            name="station-name"
+            id="station-name"
+            class="form-control"
+            placeholder="Enter station name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="station-price" for="station-price">Station Price</label>
+          <input
+            type="text"
+            name="station-price"
+            id="station-price"
+            class="form-control"
+            placeholder="Enter fuel price"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="station-area" for="station-area">Station Area</label>
+          <input
+            type="text"
+            name="station-area"
+            id="station-area"
+            class="form-control"
+            placeholder="Enter station area"
+            required
+          />
+        </div>
 
-<script src="reportfuel.js"></script>
-</body>
+        <div class="form-group">
+          <label id="station-state" for="station-state">Station State</label>
+          <input
+            type="text"
+            name="station-state"
+            id="station-state"
+            class="form-control"
+            placeholder="Enter station state"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="station-country" for="station-country"
+            >Station Country</label
+          >
+          <input
+            type="text"
+            name="station-country"
+            id="station-country"
+            class="form-control"
+            placeholder="Enter Station country"
+          />
+          <input type="submit" value="Send">
+        </div>
+      </form>
+
+    <footer>
+      <p>&copy; Fuel Alert 2023</p>
+    </footer>
+
+    <script src="reportfuel.js"></script>
+  </body>
 </html>

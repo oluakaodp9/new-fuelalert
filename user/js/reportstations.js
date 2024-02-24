@@ -1,12 +1,10 @@
-<<<<<<< HEAD:old-user/reportfuel.js
-const reportFuelPriceForm = document.getElementById('reportFuelPrice-form');
+const reportStationForm = document.getElementById('reportstations-form');
 
-reportFuelPriceForm.addEventListener('submit', (event) => {
+reportStationForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const stationName = document.getElementById('stationName').value;
   const stationArea = document.getElementById('stationArea').value;
-  const stationPrice = document.getElementById('stationPrice')
   const stationState = document.getElementById('stationState').value;
   const stationCountry = document.getElementById('stationCountry').value;
 
@@ -14,13 +12,12 @@ reportFuelPriceForm.addEventListener('submit', (event) => {
   const reportData = {
     stationName,
     stationArea,
-    stationPrice,
     stationState,
     stationCountry,
   };
 
-  // Send API request using fetch 
-  fetch('https://FuelAlert.myf2.net/api/fuel_price_apis/create_fuel_price.php ', {
+  // Send API request using fetch or axios
+  fetch('/api/reportStation', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -36,7 +33,9 @@ reportFuelPriceForm.addEventListener('submit', (event) => {
       // Handle API error
       console.error('Error reporting station:', error);
     });
-=======
+  })
+
+  
 const reportFuelPriceForm = document.getElementById('reportFuelPrice-form');
 
 reportFuelPriceForm.addEventListener('submit', (event) => {
@@ -75,5 +74,4 @@ reportFuelPriceForm.addEventListener('submit', (event) => {
       // Handle API error
       console.error('Error reporting station:', error);
     });
->>>>>>> 04caa00f8a65eb486531bb999e42f1aae6dac611:user/reportfuel.js
 });
