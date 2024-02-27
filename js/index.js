@@ -3,10 +3,10 @@ const tableBody = document.querySelector('#table-container');
 
 
 function viewAllFillingStations(){
-  fetch('http://localhost/oluaka/new-fuelalert/api/fuel_price_apis/get_fuel_prices.php')
+  fetch('http:new-fuelalert.myf2.net/api/filling_station_apis/get_filling_stations.php')
   .then(res => res.json())
   .then(data => {
-    // console.log(data)
+    console.log(data)
     data.records.map((stations)=>{
       if(stations.price != null){
 
