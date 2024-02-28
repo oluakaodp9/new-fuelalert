@@ -3,7 +3,7 @@ include('../config/autoload.php');
 // required headers
 header("Access-Control-Allow-Origin:".$ORIGIN);
 header("Content-Type:".$CONTENT_TYPE);
-header("Access-Control-Allow-Methods:".$DEL_METHOD);
+header("Access-Control-Allow-Methods:".$POST_METHOD);
 header("Access-Control-Max-Age:".$MAX_AGE);
 header("Access-Control-Allow-Headers:".$ALLOWED_HEADERS);
 
@@ -14,7 +14,7 @@ $user = new User($db);
 $data = json_decode(file_get_contents("php://input"));
 
 // Check for valid ID
-if($data->email == null || $data->email == '' || $data->password == null || $data->password == '' ){
+if(empty($data->email) || $data->email == null || $data->email == ' ' || empty($data->password) || $data->password == null || $data->password == ' ' ){
       // set response code - 503 service unavailable
       http_response_code(401);
   
@@ -40,6 +40,8 @@ if($loggedInUser){
   
     // tell the user
     echo json_encode(array("message" => "User Login successful.", "user"=>$loggedInUser));
+
+    return;
 
 }
 else{
